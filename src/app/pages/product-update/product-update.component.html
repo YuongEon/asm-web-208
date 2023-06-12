@@ -1,0 +1,18 @@
+<div class="container">
+  <h2>Update product {{product.name}}</h2>
+  <form [formGroup]="updateForm" (ngSubmit)="onHandleUpdate(product.id)">
+    <div class="mb-3">
+      <label class="form-label">name</label>
+      <input type="text" class="form-control" formControlName="name">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">price</label>
+      <input type="text" class="form-control" formControlName="price">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">desc</label>
+      <input type="text" class="form-control" formControlName="desc">
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!updateForm.valid">Submit</button>
+  </form>
+</div>

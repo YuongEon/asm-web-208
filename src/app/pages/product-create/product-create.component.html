@@ -1,0 +1,18 @@
+<div class="container">
+  <h2>Create product</h2>
+  <form [formGroup]="createForm" (ngSubmit)="onHandleCreate()">
+    <div class="mb-3">
+      <label class="form-label">name</label>
+      <input type="text" class="form-control" formControlName="name">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">price</label>
+      <input type="text" class="form-control" formControlName="price">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">desc</label>
+      <input type="text" class="form-control" formControlName="desc">
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!createForm.valid">Submit</button>
+  </form>
+</div>

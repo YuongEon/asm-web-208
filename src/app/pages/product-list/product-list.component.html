@@ -1,0 +1,33 @@
+<div class="container">
+  <a [routerLink]="'/product-create'">
+    <button>Them moi</button>
+  </a>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">name</th>
+        <th scope="col">price</th>
+        <th scope="col">desc</th>
+        <th scope="col">action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of products, let i = index">
+        <th scope="row">{{i + 1}}</th>
+        <td>{{item.name}}</td>
+        <td>{{item.price}}</td>
+        <td>{{item.desc}}</td>
+        <td>
+          <a [routerLink]="'/product/'+ item.id">
+            <button>detail</button>
+          </a>
+          <a [routerLink]="'/product-update/'+item.id">
+            <button>update</button>
+          </a>
+          <button (click)="onHandleDelete(item.id)">delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
